@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>For Tasaheel ❤️</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+<div id="passwordScreen" style="position:fixed;inset:0;background:#060816;display:flex;align-items:center;justify-content:center;z-index:999999;">
+<div style="background:rgba(255,255,255,.08);padding:30px;border-radius:20px;text-align:center;color:#fff;backdrop-filter:blur(12px);width:320px;">
+<h2>🔒 Private Letter</h2><p>Enter Password</p>
+<input id="passwordInput" type="password" placeholder="Password" style="width:100%;padding:10px;border-radius:8px;border:none;margin:10px 0;">
+<button id="unlockBtn">Open ❤️</button>
+<p id="passMsg" style="color:#ffb3b3;"></p>
+</div></div>
+    <div id="loader">
+
+    <div class="loaderHeart">❤️</div>
+
+    <h2>Preparing Something Special...</h2>
+
+</div>
+
+<div id="progressBar"></div>
+
+<div id="cursorHeart"></div>
+
+<div id="roseContainer"></div>
+
+<div id="musicButton">
+🎵
+</div>
+
+<audio id="bgMusic" loop>
+    <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<!-- Background -->
+
+<div id="stars"></div>
+
+<div class="moon"></div>
+
+<div id="hearts"></div>
+
+<div class="overlay"></div>
+<!-- Background -->
+
+<div id="stars"></div>
+
+<div class="moon"></div>
+
+<div id="hearts"></div>
+
+<div class="overlay"></div>
+
+<!-- Hero -->
+
+<section class="hero">
+
+<div class="glass">
+
+<h3 class="smallTitle">
+A Letter I Couldn't Say...
+</h3>
+
+<h1 id="typing"></h1>
+
+<p class="subtitle">
+
+Some words are too heavy to say...
+
+So I wrote them instead.
+
+</p>
+
+<button id="startBtn">
+
+Continue ❤️
+
+</button>
+
+</div>
+
+</section>
+
+<!-- Letter -->
+
+<section id="letter">
+
+<div class="glass">
+
+<div id="envelope">💌</div>
+
+<div id="letterCard" style="display:none;">
+
+<h2>Dear Tasaheel ❤️</h2>
+
+<p id="letterText"></p>
+
+<button id="letterContinue" style="display:none;">Continue ❤️</button>
+
+</div>
+
+</div>
+
+</section>
+<!-- Every Line -->
+<section id="everyLine">
+
+<div class="glass">
+
+<h2>🌸 Every Line Is For You</h2>
+
+<p class="subtitle">
+
+Every apology below is written with honesty.
+
+</p>
+
+<div id="lineContainer">
+
+</div>
+
+<button id="gameBtn">
+
+Continue ❤️
+
+</button>
+
+</div>
+
+</section>
+<!-- Couple Game -->
+<section id="game">
+
+<div class="glass">
+
+<h2>❤️ Choose My Heart ❤️</h2>
+
+<p class="subtitle">
+
+Only one heart carries my true feelings...
+
+</p>
+
+<div id="heartGrid">
+
+</div>
+
+<p id="gameResult"></p>
+
+<div id="loveMeter">
+
+<div id="loveFill"></div>
+
+</div>
+
+<button id="openHeartBtn">
+
+Open My Heart ❤️
+
+</button>
+
+</div>
+
+</section>
+<!-- Final Scene -->
+<section id="finalScene">
+
+<div class="glass">
+
+<h2>❤️ One Last Thing...</h2>
+
+<p class="subtitle">
+
+Tap the heart...
+
+</p>
+
+<div id="heartContainer">
+
+    <div class="heart left">❤️</div>
+
+    <div class="heart right">❤️</div>
+
+</div>
+<div id="finalLetter">
+
+<h2>Dear Tasaheel ❤️</h2>
+
+<p>
+
+Maybe this website can't change the past.
+
+But every line, every click,
+
+and every heartbeat here
+
+was made with honesty.
+
+<br><br>
+
+If someday you smile after reading this,
+
+that alone will mean a lot to me.
+
+<br><br>
+
+Thank you...
+
+🌹
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+<script src="script.js"></script>
+
+
+<div id="wrongPopup">
+  <div class="popupBox">
+    <h2>💔 Incorrect Password</h2>
+    <p>This letter isn't meant for everyone.</p>
+    <button onclick="closePopup()">OK ❤️</button>
+  </div>
+</div>
+
+</body>
+
+</html>

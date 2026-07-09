@@ -1,0 +1,910 @@
+/* ===========================
+   RESET
+=========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:'Poppins',sans-serif;
+    overflow-x:hidden;
+    background:#060816;
+    color:#fff;
+
+}
+
+/* ===========================
+   BACKGROUND
+=========================== */
+
+body::before{
+
+    content:"";
+    position:fixed;
+    inset:0;
+
+    background:
+
+    radial-gradient(circle at top,#54257b 0%,#060816 60%),
+    linear-gradient(135deg,#060816,#132447,#33134c);
+
+    z-index:-5;
+
+}
+
+.overlay{
+
+    position:fixed;
+    inset:0;
+
+    background:linear-gradient(
+        rgba(255,255,255,.02),
+        rgba(255,255,255,.01)
+    );
+
+    z-index:-4;
+
+}
+
+/* ===========================
+   MOON
+=========================== */
+
+.moon{
+
+    position:fixed;
+
+    top:70px;
+    right:90px;
+
+    width:150px;
+    height:150px;
+
+    border-radius:50%;
+
+    background:#fff8d0;
+
+    box-shadow:
+
+    0 0 40px #fff7b5,
+    0 0 90px #fff5a0,
+    0 0 150px rgba(255,255,255,.35);
+
+    animation:moonGlow 4s infinite alternate;
+
+    z-index:-2;
+
+}
+
+@keyframes moonGlow{
+
+    from{
+
+        transform:scale(1);
+
+    }
+
+    to{
+
+        transform:scale(1.08);
+
+    }
+
+}
+
+/* ===========================
+   HERO
+=========================== */
+
+section{
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:30px;
+
+}
+
+/* ===========================
+   GLASS CARD
+=========================== */
+
+.glass{
+
+    width:min(900px,95%);
+
+    padding:50px;
+
+    border-radius:30px;
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,.15);
+
+    box-shadow:
+
+    0 15px 45px rgba(0,0,0,.45);
+
+    text-align:center;
+
+}
+
+/* ===========================
+   TEXT
+=========================== */
+
+.smallTitle{
+
+    color:#ffd5e7;
+
+    letter-spacing:2px;
+
+    margin-bottom:18px;
+
+}
+
+h1{
+
+    font-size:clamp(45px,8vw,75px);
+
+    margin-bottom:25px;
+
+}
+
+.subtitle{
+
+    font-size:20px;
+
+    line-height:1.8;
+
+    opacity:.92;
+
+}
+
+/* ===========================
+   BUTTON
+=========================== */
+
+button{
+
+    margin-top:40px;
+
+    padding:18px 36px;
+
+    border:none;
+
+    border-radius:60px;
+
+    background:linear-gradient(
+        90deg,
+        #ff4d6d,
+        #ff84a1
+    );
+
+    color:#fff;
+
+    font-size:18px;
+
+    cursor:pointer;
+
+    transition:.35s;
+
+}
+
+button:hover{
+
+    transform:translateY(-4px) scale(1.05);
+
+    box-shadow:
+
+    0 12px 30px rgba(255,77,109,.45);
+
+}
+
+/* ===========================
+   LETTER
+=========================== */
+
+#letter{
+
+    background:transparent;
+
+}
+
+#envelope{
+
+    font-size:120px;
+
+    cursor:pointer;
+
+    transition:.4s;
+
+}
+
+#envelope:hover{
+
+    transform:scale(1.12);
+
+}
+
+#letterCard{
+
+    display:none;
+
+    margin-top:30px;
+
+}
+
+#letterText{
+
+    margin-top:20px;
+
+    line-height:2;
+
+}
+
+/* ===========================
+   MOBILE
+=========================== */
+
+@media(max-width:768px){
+
+.moon{
+
+right:20px;
+
+top:30px;
+
+width:90px;
+
+height:90px;
+
+}
+
+.glass{
+
+padding:28px;
+
+}
+
+h1{
+
+font-size:40px;
+
+}
+
+.subtitle{
+
+font-size:17px;
+
+}
+
+button{
+
+width:100%;
+
+}
+
+}
+/* ===========================
+STARS
+=========================== */
+
+.star{
+
+position:fixed;
+
+width:2px;
+
+height:2px;
+
+background:white;
+
+border-radius:50%;
+
+animation:twinkle infinite;
+
+opacity:.7;
+
+}
+
+@keyframes twinkle{
+
+0%{
+
+opacity:.2;
+transform:scale(.5);
+
+}
+
+50%{
+
+opacity:1;
+transform:scale(2);
+
+}
+
+100%{
+
+opacity:.2;
+transform:scale(.5);
+
+}
+
+}
+
+
+/* ===========================
+HEARTS
+=========================== */
+
+.floatingHeart{
+
+position:fixed;
+
+top:-50px;
+
+pointer-events:none;
+
+animation:fall linear;
+
+z-index:-1;
+
+}
+
+@keyframes fall{
+
+to{
+
+transform:translateY(110vh)
+rotate(360deg);
+
+}
+
+}
+/* ===========================
+EVERY LINE
+=========================== */
+
+#lineContainer{
+
+margin-top:30px;
+
+height:420px;
+
+overflow-y:auto;
+
+padding:20px;
+
+background:rgba(255,255,255,.05);
+
+border-radius:18px;
+
+border:1px solid rgba(255,255,255,.08);
+
+text-align:left;
+
+}
+
+.line{
+
+padding:10px;
+
+margin:8px 0;
+
+border-radius:10px;
+
+background:rgba(255,255,255,.04);
+
+animation:fadeIn .6s;
+
+transition:.3s;
+
+}
+
+.line:hover{
+
+background:rgba(255,255,255,.12);
+
+transform:translateX(6px);
+
+}
+
+@keyframes fadeIn{
+
+from{
+
+opacity:0;
+
+transform:translateY(15px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:none;
+
+}
+
+}
+/* ===========================
+COUPLE GAME
+=========================== */
+
+#heartGrid{
+
+display:grid;
+
+grid-template-columns:repeat(3,90px);
+
+gap:20px;
+
+justify-content:center;
+
+margin:40px 0;
+
+}
+
+.heart{
+
+font-size:45px;
+
+cursor:pointer;
+
+transition:.3s;
+
+user-select:none;
+
+}
+
+.heart:hover{
+
+transform:scale(1.25);
+
+}
+
+#gameResult{
+
+min-height:35px;
+
+font-size:18px;
+
+margin:20px 0;
+
+}
+
+#loveMeter{
+
+height:12px;
+
+width:100%;
+
+background:#ffffff20;
+
+border-radius:50px;
+
+overflow:hidden;
+
+margin:20px auto;
+
+}
+
+#loveFill{
+
+height:100%;
+
+width:0;
+
+background:linear-gradient(90deg,#ff4d6d,#ff9ec7);
+
+transition:1s;
+
+}
+
+#openHeartBtn{
+
+display:none;
+
+}
+/* ===========================
+FINAL SCENE
+=========================== */
+
+#bigHeart{
+
+font-size:140px;
+
+cursor:pointer;
+
+margin:40px 0;
+
+animation:heartbeat 1.2s infinite;
+
+transition:.6s;
+
+}
+
+@keyframes heartbeat{
+
+0%,100%{
+
+transform:scale(1);
+
+}
+
+50%{
+
+transform:scale(1.18);
+
+}
+
+}
+
+#finalLetter{
+
+display:none;
+
+margin-top:30px;
+
+animation:fadeUp 1s;
+
+}
+
+@keyframes fadeUp{
+
+from{
+
+opacity:0;
+
+transform:translateY(40px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:none;
+
+}
+
+}
+/* ===========================
+PROGRESS BAR
+=========================== */
+
+#progressBar{
+
+position:fixed;
+
+top:0;
+
+left:0;
+
+height:5px;
+
+width:0;
+
+background:linear-gradient(90deg,#ff4d6d,#ff8fa3);
+
+z-index:99999;
+
+}
+
+
+/* ===========================
+MUSIC BUTTON
+=========================== */
+
+#musicButton{
+
+position:fixed;
+
+top:25px;
+
+left:25px;
+
+width:55px;
+
+height:55px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+border-radius:50%;
+
+background:#ffffff18;
+
+backdrop-filter:blur(15px);
+
+cursor:pointer;
+
+font-size:24px;
+
+z-index:9999;
+
+transition:.3s;
+
+}
+
+#musicButton:hover{
+
+transform:rotate(15deg) scale(1.15);
+
+}
+
+
+/* ===========================
+ROSE PETALS
+=========================== */
+
+.petal{
+
+position:fixed;
+
+top:-50px;
+
+pointer-events:none;
+
+animation:petalFall linear;
+
+z-index:2;
+
+}
+
+@keyframes petalFall{
+
+to{
+
+transform:translateY(110vh)
+rotate(720deg);
+
+}
+
+}
+/* ===========================
+LOADER
+=========================== */
+
+#loader{
+
+position:fixed;
+
+inset:0;
+
+background:#050816;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+flex-direction:column;
+
+z-index:999999;
+
+transition:1s;
+
+}
+
+.loaderHeart{
+
+font-size:90px;
+
+animation:loaderBeat 1s infinite;
+
+}
+
+@keyframes loaderBeat{
+
+50%{
+
+transform:scale(1.2);
+
+}
+
+}
+
+#loader h2{
+
+margin-top:20px;
+
+font-weight:400;
+
+letter-spacing:2px;
+
+color:#ffd6e5;
+
+}
+/* =====================================
+ENVELOPE
+===================================== */
+
+#envelope{
+
+position:relative;
+
+width:320px;
+
+height:220px;
+
+margin:50px auto;
+
+cursor:pointer;
+
+perspective:1000px;
+
+}
+
+.envelope-body{
+
+position:absolute;
+
+bottom:0;
+
+width:100%;
+
+height:150px;
+
+background:#f3d6b5;
+
+border-radius:0 0 12px 12px;
+
+box-shadow:0 10px 30px rgba(0,0,0,.35);
+
+z-index:3;
+
+}
+
+.envelope-flap{
+
+position:absolute;
+
+top:0;
+
+width:100%;
+height:120px;
+
+background:#e7c49b;
+
+clip-path:polygon(0 0,100% 0,50% 100%);
+
+transform-origin:top;
+
+transition:1s;
+
+z-index:5;
+
+}
+
+.letter-paper{
+
+position:absolute;
+
+left:50%;
+
+bottom:20px;
+
+transform:translateX(-50%);
+
+width:88%;
+
+height:140px;
+
+background:white;
+
+color:#222;
+
+padding:18px;
+
+border-radius:10px;
+
+overflow:hidden;
+
+transition:1s;
+
+z-index: 2;
+
+}
+
+#envelope.open .envelope-flap{
+
+transform:rotateX(180deg);
+
+}
+
+#envelope.open .letter-paper{
+
+bottom:130px;
+
+}
+/* ===========================
+HEART SPLIT
+=========================== */
+
+#heartContainer{
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+margin:40px 0;
+
+cursor:pointer;
+
+}
+
+.heart{
+
+font-size:120px;
+
+transition:1.2s ease;
+
+user-select:none;
+
+}
+
+.left{
+
+transform-origin:right center;
+
+}
+
+.right{
+
+transform-origin:left center;
+
+}
+
+#heartContainer.open .left{
+
+transform:translateX(-70px) rotate(-25deg);
+
+}
+
+#heartContainer.open .right{
+
+transform:translateX(70px) rotate(25deg);
+
+}
+
+#heartContainer.open{
+
+filter:drop-shadow(0 0 35px #ff4d6d);
+
+}
+
+#envelope{
+font-size:110px;
+cursor:pointer;
+transition:.3s;
+}
+#envelope:hover{transform:scale(1.1);}
+#letterCard{display:none;margin-top:20px;}
+
+#wrongPopup{position:fixed;inset:0;background:rgba(0,0,0,.75);display:none;justify-content:center;align-items:center;z-index:999999;}
+.popupBox{background:rgba(255,255,255,.12);backdrop-filter:blur(15px);padding:30px;border-radius:20px;text-align:center;color:#fff;width:320px;border:1px solid rgba(255,255,255,.2);}
+.popupBox button{margin-top:20px;}
